@@ -1,106 +1,107 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Code By Sandro</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
   <style>
-    html {
-      scroll-behavior: smooth;
+    :root {
+      --azul-escuro: #051d40;
+      --azul-medio: #145da0;
+      --azul-claro: #56aeff;
+      --azul-suave: #b1d4e0;
+      --branco: #ffffff;
     }
 
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f8f9fa;
-      color: #333;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+      background-color: var(--azul-escuro);
+      color: var(--branco);
     }
 
-    nav.navbar {
-      background-color: #0d1b2a;
+    .navbar {
+      background-color: var(--azul-escuro);
     }
 
-    .navbar-brand, .nav-link {
-      color: white !important;
-    }
-
-    .hero {
-      background-color: #0d1b2a;
-      color: white;
-      text-align: center;
-      padding: 100px 20px;
-    }
-
-    .hero img {
-      width: 160px;
-      margin-bottom: 20px;
-      animation: fadeIn 1.5s ease-in;
-    }
-
-    .hero h1 {
-      font-size: 2.8rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-      animation: fadeInUp 1.8s ease-in;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      animation: fadeInUp 2s ease-in;
+    .navbar-brand img {
+      height: 50px;
     }
 
     section {
-      padding: 80px 20px;
+      padding: 80px 0;
     }
 
-    .section-title {
-      color: #0d1b2a;
-      font-weight: 700;
-      margin-bottom: 30px;
+    #inicio {
+      background: linear-gradient(180deg, var(--azul-medio), var(--azul-escuro));
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
+      min-height: 100vh;
+    }
+
+    #inicio img {
+      width: 150px;
+      margin-bottom: 20px;
+    }
+
+    #inicio h1 {
+      font-weight: 700;
+      color: var(--branco);
+    }
+
+    #inicio p {
+      color: var(--azul-suave);
+      font-size: 1.2rem;
+    }
+
+    h2 {
+      color: var(--azul-claro);
+      font-weight: 600;
+      margin-bottom: 40px;
+    }
+
+    .skill-card {
+      background-color: var(--azul-medio);
+      border: none;
+      border-radius: 10px;
+      padding: 20px;
+      color: var(--branco);
+      transition: transform 0.3s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+      background-color: var(--azul-claro);
+      color: var(--azul-escuro);
     }
 
     footer {
-      background-color: #0d1b2a;
-      color: white;
+      background-color: var(--azul-medio);
+      padding: 20px 0;
+      color: var(--branco);
       text-align: center;
-      padding: 30px 10px;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    a {
+      color: var(--azul-claro);
+      text-decoration: none;
     }
 
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .fade-section {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
-
-    .fade-section.visible {
-      opacity: 1;
-      transform: translateY(0);
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
-
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm">
     <div class="container">
-      <a class="navbar-brand" href="#home">Code By Sandro</a>
+      <a class="navbar-brand" href="#inicio">
+        <img src="https://drive.google.com/uc?export=view&id=15FaHbFd-jxW1PMhVKGIPATI9WrLLsGkl" alt="Code By Sandro Logo">
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -115,88 +116,68 @@
     </div>
   </nav>
 
-  <!-- Hero -->
-  <section id="home" class="hero">
-    <img src="https://drive.google.com/uc?export=view&id=15FaHbFd-jxW1PMhVKGIPATI9WrLLsGkl" alt="Logo Code By Sandro">
-    <h1>Code By Sandro</h1>
-    <p>Aprendendo e criando com programação, IA, automação, dados e cibersegurança.</p>
+  <!-- Início -->
+  <section id="inicio">
+    <div class="container">
+      <img src="https://drive.google.com/uc?export=view&id=15FaHbFd-jxW1PMhVKGIPATI9WrLLsGkl" alt="Code By Sandro Logo">
+      <h1>Code By Sandro</h1>
+      <p>🚀 Explorando programação, IA, automação, ciência de dados e cibersegurança.</p>
+    </div>
   </section>
 
   <!-- Sobre -->
-  <section id="sobre" class="fade-section">
-    <div class="container">
-      <h2 class="section-title">Sobre</h2>
-      <p class="text-center mx-auto" style="max-width: 700px;">
-        Sou <strong>Sandro A. G. Silva</strong>, apaixonado por tecnologia, educação e inovação.  
-        Depois de mais de 20 anos na área educacional, decidi mergulhar de vez no universo da
-        <strong>Ciência da Computação</strong>, explorando <em>programação, inteligência artificial, automação,
-        ciência de dados e cibersegurança</em>.  
-        Acredito que aprender e criar com tecnologia é uma forma de transformar ideias em soluções reais.
-      </p>
+  <section id="sobre">
+    <div class="container text-center">
+      <h2>Sobre</h2>
+      <p>Sou Sandro A. G. Silva, entusiasta da tecnologia e da inovação, atualmente cursando Ciência da Computação.  
+      Busco aprender e criar soluções inteligentes que conectem educação, automação e dados de forma significativa.</p>
     </div>
   </section>
 
   <!-- Habilidades -->
-  <section id="habilidades" class="bg-light fade-section">
+  <section id="habilidades" class="bg-dark">
     <div class="container text-center">
-      <h2 class="section-title">Habilidades</h2>
-      <div class="row justify-content-center">
-        <div class="col-6 col-md-2 m-3">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="60" alt="Python">
-          <p>Python</p>
+      <h2>Habilidades</h2>
+      <div class="row g-4">
+        <div class="col-md-3">
+          <div class="skill-card">💻 Programação</div>
         </div>
-        <div class="col-6 col-md-2 m-3">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="60" alt="HTML5">
-          <p>HTML5</p>
+        <div class="col-md-3">
+          <div class="skill-card">🤖 Inteligência Artificial</div>
         </div>
-        <div class="col-6 col-md-2 m-3">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="60" alt="CSS3">
-          <p>CSS3</p>
+        <div class="col-md-3">
+          <div class="skill-card">⚙️ Automação</div>
         </div>
-        <div class="col-6 col-md-2 m-3">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" width="60" alt="Bootstrap">
-          <p>Bootstrap</p>
+        <div class="col-md-3">
+          <div class="skill-card">📊 Ciência de Dados</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Projetos -->
-  <section id="projetos" class="fade-section">
-    <div class="container">
-      <h2 class="section-title">Projetos</h2>
-      <p class="text-center text-muted">Em breve, compartilharei meus projetos por aqui 🚀</p>
+  <section id="projetos">
+    <div class="container text-center">
+      <h2>Projetos</h2>
+      <p>Em breve compartilharei meus primeiros projetos por aqui.</p>
     </div>
   </section>
 
   <!-- Contato -->
-  <section id="contato" class="bg-light fade-section">
+  <section id="contato" class="bg-dark">
     <div class="container text-center">
-      <h2 class="section-title">Contato</h2>
+      <h2>Contato</h2>
       <p>📧 <a href="mailto:codebysandro@gmail.com">codebysandro@gmail.com</a></p>
-      <p>💼 <a href="https://linkedin.com/in/sandrogregoli" target="_blank">linkedin.com/in/sandrogregoli</a></p>
-      <p>🐙 <a href="https://github.com/code-by-sandro" target="_blank">github.com/code-by-sandro</a></p>
+      <p>🐙 <a href="https://github.com/code-by-sandro" target="_blank">GitHub</a> | 💼 <a href="https://www.linkedin.com/in/sandrogregoli" target="_blank">LinkedIn</a></p>
     </div>
   </section>
 
   <!-- Rodapé -->
   <footer>
-    <p>© 2025 Code By Sandro · Desenvolvido com 💙 e Bootstrap</p>
+    <p>© 2025 Code By Sandro</p>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    // Fade-in suave ao rolar
-    const fadeSections = document.querySelectorAll('.fade-section');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.2 });
-
-    fadeSections.forEach(section => observer.observe(section));
-  </script>
 </body>
 </html>
+
