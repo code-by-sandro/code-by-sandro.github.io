@@ -11,6 +11,9 @@ Acredito que aprender e criar com tecnologia é uma forma de transformar ideias 
 Sempre em busca de novos desafios e aprendizado contínuo. 💡
 
 📧 E-mail: codebysandro@gmail.com
+
 🌐 Portfólio: em breve
+
 💼 LinkedIn: linkedin.com/in/sandrogregoli
+
 🐙 GitHub: github.com/code-by-sandro
