@@ -1,123 +1,276 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Code By Sandro</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome (ícones) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
   <style>
+    :root{
+      --azul-escuro: #051d40;
+      --azul-medio:  #145da0;
+      --azul-claro:  #56aeff;
+      --azul-suave:  #b1d4e0;
+      --branco:      #ffffff;
+      --cinza-esc:   #0a2a59;
+    }
+
+    html { scroll-behavior: smooth; }
     body {
-      font-family: "Poppins", sans-serif;
-      background-color: #051d40;
-      color: #ffffff;
-      scroll-behavior: smooth;
+      font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      background-color: var(--azul-escuro);
+      color: var(--branco);
     }
 
-    /* Cabeçalho */
-    .navbar {
-      background-color: #145da0;
-    }
+    /* Navbar */
+    .navbar { background-color: var(--azul-medio); }
+    .navbar-brand img { height: 44px; border-radius: 8px; }
 
-    .navbar-brand img {
-      height: 40px;
-      border-radius: 8px;
-    }
-
-    /* Banner principal */
+    /* Hero */
     .hero {
-      background: linear-gradient(135deg, #051d40, #145da0, #56aeff);
+      background: linear-gradient(135deg, var(--azul-escuro), var(--azul-medio));
       text-align: center;
-      padding: 100px 20px;
+      padding: 90px 20px;
+      min-height: 65vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
     }
-
     .main-logo {
-      max-width: 300px;
-      border-radius: 16px;
-      animation: fadeZoom 2s ease;
+      max-width: 260px;
+      width: 40%;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(5,29,64,0.35);
+      animation: fadeZoom 900ms ease both;
     }
-
     @keyframes fadeZoom {
-      from {
-        opacity: 0;
-        transform: scale(0.8);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
+      0% { opacity: 0; transform: translateY(8px) scale(0.96); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
     }
+    .hero h1{ margin-top: 18px; font-weight:700; font-size:2rem; color:var(--branco); }
+    .hero p{ color:var(--azul-suave); font-size:1.05rem; margin-top:12px; max-width:900px; }
 
-    /* Bio */
-    .bio {
-      font-size: 1.3rem;
-      margin-top: 20px;
-      color: #b1d4e0;
+    /* Sections */
+    section { padding: 70px 0; }
+
+    /* Sobre */
+    #sobre { background: transparent; }
+    #sobre .container p { color: var(--b1, var(--azul-suave)); }
+
+    /* Habilidades: fundo branco com cartões */
+    #habilidades { background: var(--branco); color: #111; }
+    .skills-grid { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; align-items:center; }
+    .skill {
+      width: 150px;
+      height: 150px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(2,10,30,0.08);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:12px;
+      transition: transform .22s ease, box-shadow .22s ease;
+      border:1px solid #e8eef8;
     }
+    .skill:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(2,10,30,0.12); }
+    .skill img { max-width:72px; max-height:72px; margin-bottom:10px; }
+    .skill .label { font-weight:600; color:#123; font-size:0.95rem; }
 
-    /* Seção Habilidades */
-    .skills {
-      background-color: #0a2a59;
-      padding: 60px 20px;
-    }
+    /* Projetos & Contato */
+    #projetos { background: transparent; color: var(--branco); }
+    #projetos .card { background: rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.06); }
+    #contato { background: var(--cinza-esc); color: var(--branco); }
 
-    .skills img {
-      width: 70px;
-      margin: 15px;
-      transition: transform 0.3s ease;
-    }
+    /* Footer */
+    footer { background: var(--azul-medio); color: var(--branco); padding:18px 10px; text-align:center; }
 
-    .skills img:hover {
-      transform: scale(1.2);
-    }
-
-    footer {
-      background-color: #145da0;
-      text-align: center;
-      padding: 15px;
-      color: #ffffff;
+    /* Small screens */
+    @media (max-width:575px){
+      .main-logo { width: 55%; max-width:220px; }
+      .skill { width: 42%; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Cabeçalho -->
-  <nav class="navbar navbar-expand-lg">
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm">
     <div class="container">
-      <a class="navbar-brand" href="#">
-        <img src="https://github.com/code-by-sandro/code-by-sandro.github.io/blob/main/logoCodeBySandro2t.png?raw=true" alt="Code By Sandro Logo">
+      <a class="navbar-brand" href="#home">
+        <!-- logo no cabeçalho (já no GitHub -> raw=true) -->
+        <img id="logo-top" src="https://github.com/code-by-sandro/code-by-sandro.github.io/blob/main/logoCodeBySandro2t.png?raw=true" alt="Code By Sandro">
       </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+          <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <img src="https://github.com/code-by-sandro/code-by-sandro.github.io/blob/main/logoCodeBySandro2t.png?raw=true"
-         alt="Logo Code By Sandro" class="main-logo">
-    <h1 class="mt-4">🚀 Explorando programação, IA, automação, ciência de dados e cibersegurança.</h1>
+  <!-- HERO -->
+  <header id="home" class="hero">
+    <!-- logo maior no centro (aponta para o raw do GitHub) -->
+    <img id="logo-main" class="main-logo" src="https://github.com/code-by-sandro/code-by-sandro.github.io/blob/main/logoCodeBySandro2t.png?raw=true" alt="Code By Sandro">
+    <h1>Code By Sandro</h1>
+    <p>🚀 Explorando programação, IA, automação, ciência de dados e cibersegurança.</p>
+  </header>
+
+  <!-- SOBRE -->
+  <section id="sobre">
+    <div class="container text-center">
+      <h2 style="color:var(--azul-claro)">Sobre</h2>
+      <p class="mx-auto" style="max-width:900px; color:var(--azul-suave)">
+        Sou Sandro A. G. Silva — entusiasta da tecnologia e inovação. Atualmente cursando Ciência da Computação,
+        busco aprender e criar soluções que conectem educação, automação e dados de forma prática e significativa.
+      </p>
+    </div>
   </section>
 
-  <!-- Habilidades -->
-  <section class="skills text-center">
-    <div class="container">
-      <h2 class="mb-4">Habilidades</h2>
-      <div class="d-flex justify-content-center flex-wrap">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Scratchcat.svg" alt="Scratch">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux/Shell Script">
+  <!-- HABILIDADES (Fundo branco) -->
+  <section id="habilidades" class="py-5">
+    <div class="container text-center">
+      <h2 style="color:var(--azul-escuro)">Habilidades</h2>
+      <div class="skills-grid mt-4">
+        <!-- Python -->
+        <div class="skill" title="Python">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"
+               onerror="this.style.display='none'; this.parentNode.insertAdjacentHTML('beforeend','<div class=\\'label\\'>Python</div>')">
+          <div class="label">Python</div>
+        </div>
+
+        <!-- JavaScript -->
+        <div class="skill" title="JavaScript">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"
+               onerror="this.style.display='none'; this.parentNode.insertAdjacentHTML('beforeend','<div class=\\'label\\'>JavaScript</div>')">
+          <div class="label">JavaScript</div>
+        </div>
+
+        <!-- HTML5 -->
+        <div class="skill" title="HTML5">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5"
+               onerror="this.style.display='none'; this.parentNode.insertAdjacentHTML('beforeend','<div class=\\'label\\'>HTML5</div>')">
+          <div class="label">HTML5</div>
+        </div>
+
+        <!-- CSS3 -->
+        <div class="skill" title="CSS3">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3"
+               onerror="this.style.display='none'; this.parentNode.insertAdjacentHTML('beforeend','<div class=\\'label\\'>CSS3</div>')">
+          <div class="label">CSS3</div>
+        </div>
+
+        <!-- Bootstrap -->
+        <div class="skill" title="Bootstrap">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap"
+               onerror="this.style.display='none'; this.parentNode.insertAdjacentHTML('beforeend','<div class=\\'label\\'>Bootstrap</div>')">
+          <div class="label">Bootstrap</div>
+        </div>
+
+        <!-- Linux / Shell -->
+        <div class="skill" title="Linux / Shell Script">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux"
+               onerror="this.style.display='none'; this.parentNode.insertAdjacentHTML('beforeend','<div class=\\'label\\'>Linux</div>')">
+          <div class="label">Linux / Shell Script</div>
+        </div>
+
+        <!-- Scratch -->
+        <div class="skill" title="Scratch">
+          <!-- tentativa com Wikimedia (muitas vezes funciona); se falhar, aparece só o texto -->
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Scratchcat.svg" alt="Scratch"
+               onerror="this.style.display='none'; this.parentNode.insertAdjacentHTML('beforeend','<div class=\\'label\\'>Scratch</div>')">
+          <div class="label">Scratch</div>
+        </div>
+
+        <!-- Git -->
+        <div class="skill" title="Git / GitHub">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"
+               onerror="this.style.display='none'; this.parentNode.insertAdjacentHTML('beforeend','<div class=\\'label\\'>Git</div>')">
+          <div class="label">Git / GitHub</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Rodapé -->
+  <!-- PROJETOS -->
+  <section id="projetos">
+    <div class="container text-center">
+      <h2 style="color:var(--azul-claro)">Projetos</h2>
+      <p class="text-muted" style="color:var(--b1, var(--azul-suave))">Em breve, compartilharei meus projetos e experimentos por aqui.</p>
+
+      <div class="row justify-content-center mt-4">
+        <div class="col-md-6">
+          <div class="card mb-3" style="background: rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.04);">
+            <div class="card-body">
+              <h5 class="card-title">Projeto: Em desenvolvimento</h5>
+              <p class="card-text text-muted" style="color:var(--azul-suave)">Área: automação / protótipo com Python. Aqui você verá demos e explicações técnicas quando eu publicar.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato" class="py-5" style="background:var(--cinza-esc); color:var(--branco)">
+    <div class="container text-center">
+      <h2 style="color:var(--azul-claro)">Contato</h2>
+      <p style="margin-top:12px;">📧 <a href="mailto:codebysandro@gmail.com">codebysandro@gmail.com</a></p>
+      <p>🐙 <a href="https://github.com/code-by-sandro" target="_blank" rel="noopener">github.com/code-by-sandro</a> | 💼 <a href="https://www.linkedin.com/in/sandrogregoli" target="_blank" rel="noopener">linkedin.com/in/sandrogregoli</a></p>
+      <p style="margin-top:6px; color:var(--azul-suave)">📱 (11) 99480-4668</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
-    <p>© 2025 Code By Sandro</p>
+    <div class="container">
+      <small>© 2025 Code By Sandro · Desenvolvido por Sandro A. G. Silva</small>
+    </div>
   </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Fallback helper: caso a imagem do logo principal falhe, substitui por texto -->
+  <script>
+    // se o logo do cabeçalho não carregar, exibe texto
+    document.querySelectorAll('img').forEach(img=>{
+      img.addEventListener('error', function(){
+        const parent = this.parentNode;
+        if (!parent) return;
+        // evitar duplicação: se já existe um fallback, não inserir outro
+        if (parent.querySelector('.img-fallback')) return;
+        const fallback = document.createElement('div');
+        fallback.className = 'img-fallback';
+        fallback.style.padding = '6px 10px';
+        fallback.style.color = 'white';
+        fallback.style.fontWeight = '700';
+        fallback.textContent = this.alt || 'Code By Sandro';
+        parent.appendChild(fallback);
+        this.style.display = 'none';
+      });
+    });
+  </script>
 
 </body>
 </html>
